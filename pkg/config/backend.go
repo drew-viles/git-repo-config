@@ -17,14 +17,13 @@ type BackendAuth struct {
 }
 
 func (b *Backend) UnmarshalJSON(data []byte) error {
-	type tempBackend struct {
+	tb := &struct {
 		Name string
 		Host string
 		Url  *string
 		Auth BackendAuth
-	}
-	var tb tempBackend
-	if err := json.Unmarshal(data, &tb); err != nil {
+	}{}
+	if err := json.Unmarshal(data, tb); err != nil {
 		return err
 	}
 

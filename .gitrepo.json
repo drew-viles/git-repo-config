@@ -1,0 +1,16 @@
+{
+  "name": "fuzzy-guacamole",
+  "version": "1.0.0",
+  "backends": [
+    {
+      "name": "main",
+      "host": "github",
+      "url": "test-url.com",
+      "auth": {
+        "token": "${env.GH_TOKEN}",
+        "test_auth": true
+      }
+    }
+  ],
+  "visibility": "testing"
+}
